@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:13
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_DB: learn_app_db
+      POSTGRES_USER: tranhieu
+      POSTGRES_PASSWORD: 123
+    volumes:
+    - docker-nest-postgres:/var/lib/postgresql/data
+
+volumes:
+  redis:
+    driver: local
+  docker-nest-postgres:
